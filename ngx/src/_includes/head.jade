@@ -1,0 +1,26 @@
+meta(charset="utf-8")
+
+//- Display environment when not in production
+if environment === "production"
+    title Tiger Team
+else
+    title= '[' + environment + '] - Tiger Team'
+
+base(href="/")
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+link(rel="stylesheet", type="text/css", href="app.css")
+
+//- Non production environment
+//- Load jspm loader and configuration
+if environment !== "production"
+    script(src="_jspm_packages/system.js")
+    script(src="config.js")
+    //- Bootstrap the application
+    script.
+        System.import('app');
+
+//- Production environment
+//- Load self executing bundle
+if environment === "production"
+    script(src="build.js")
