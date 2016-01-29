@@ -25,7 +25,7 @@
   "dependencies": {
     "config": "^1.14.x",
     "express": "^4.12.x",
-    "harp": "^0.18.x",
+    "harp": "^0.20.x",
     "morgan": "^1.6.x"
   },
   "devDependencies": {
